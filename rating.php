@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['save'])) {
-    $conn = new mysqli('localhost', 'root' , '','ratingsystem') ;
+    $conn = new mysqli('localhost', 'root' , '','pidev-2') ;
     $uID =$conn ->real_escape_string ($_POST['uID']) ;
     $ratedIndex =$conn -> real_escape_string ($_POST['ratedIndex']) ;
     $ratedIndex ++ ;
