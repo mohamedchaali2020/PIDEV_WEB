@@ -1,37 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Promotion index{% endblock %}
+{% block title %}Coupon index{% endblock %}
 
 {% block body %}
-    <h1>Promotion index</h1>
+    <h1>Coupon index</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>PromotionId</th>
+                <th>CouponId</th>
+                <th>CouponKey</th>
                 <th>Value</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for promotion in promotions %}
+        {% for coupon in coupons %}
             <tr>
-                <td>{{ promotion.id }}</td>
-                <td>{{ promotion.promotionId }}</td>
-                <td>{{ promotion.value }}</td>
+                <td>{{ coupon.id }}</td>
+                <td>{{ coupon.couponId }}</td>
+                <td>{{ coupon.couponKey }}</td>
+                <td>{{ coupon.value }}</td>
                 <td>
-                    <a href="{{ path('promotion_show', {'id': promotion.id}) }}">show</a>
-                    <a href="{{ path('promotion_edit', {'id': promotion.id}) }}">edit</a>
+                    <a href="{{ path('coupon_show', {'id': coupon.id}) }}">show</a>
+                    <a href="{{ path('coupon_edit', {'id': coupon.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('promotion_new') }}">Create new</a>
+    <a href="{{ path('coupon_new') }}">Create new</a>
 {% endblock %}
